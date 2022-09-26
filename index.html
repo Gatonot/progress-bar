@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress UI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="progress">
+        <div class="wrapper">
+            <p>Progress</p>
+            <div class="progress-bar">
+                <svg class="progress-circle" width="120" height="120">
+                    <!-- r = (widthSVG / 2) - (strokeWidth * 2) -->
+                    <circle 
+                        stroke="#eef3f6"
+                        stroke-width="8"
+                        cx="60"
+                        cy="60"
+                        r="44"
+                        fill="transparent"
+                     />
+                    <circle 
+                        class="progress-circle__circle"
+                        stroke="#045dfe"
+                        stroke-width="8"
+                        cx="60"
+                        cy="60"
+                        r="44"
+                        fill="transparent"
+                     />
+                </svg>
+                
+                <div class="progress-settings">
+                    <label class="progress-input__percent">
+                        <input type="number" class="percent-progress" value="10">
+                        <span>Value</span>
+                    </label>
+                    <label class="progress-checkbox__animate">
+                        <input type="checkbox">
+                        <div class="custom-checkbox">
+                            <div class="checkbox"></div>
+                        </div>
+                        <span>Animate</span>
+                    </label>
+                    <label class="progress-checkbox__hide">
+                        <input type="checkbox">
+                        <div class="custom-checkbox">
+                            <div class="checkbox"></div>
+                        </div>
+                        <span>Hide</span>
+                    </label>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    background: #eef3f6;
+    height: 100%;
+}
+
+.progress {
+    background: #fff;
+    padding: 20px;
+    width: 568px;
+    height: 320px;
+    border-radius: 0;
+    margin: 100px auto 0;
+}
+
+.progress-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    display: flex;
+    width: 70%;
+    margin: 55px auto 0;
+    background: #FFF;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.progress-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+}
+
+.wrapper {
+    border: 3px dashed #eef3f6;
+    height: 100%;
+    position: relative;
+}
+
+.wrapper::before {
+    content: "";
+    width: 60%;
+    height: 100%;
+    border: 3px dashed #eef3f6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-15%, -50%);
+}
+
+.wrapper::after {
+    content: "";
+    width: 60%;
+    height: 100%;
+    border: 3px dashed #eef3f6;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(20%, 50%);
+}
+
+.progress-circle.hide {
+    visibility: hidden;
+}
+
+.progress-circle.animate {
+    transition: .6s;
+    transform: rotate(420deg);
+}
+
+.progress-circle__circle {
+    transform-origin: center;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset .3s;
+}
+
+.progress-settings label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.progress-input__percent input {
+    width: 38px;
+    height: 16px;
+    border-radius: 20px;
+    padding: 8px 12px;
+    border: 1px solid #dde8ed;
+}
+
+.progress-input__percent input:focus,
+.progress-input__percent input:active {
+    outline: none;
+}
+
+.progress-settings label input[type="checkbox"] {
+    display: none;
+}
+
+.custom-checkbox {
+    width: 62px;
+    height: 32px;
+    border-radius: 20px;
+    padding: 2px;
+    background: #dde8ed;
+    transition: .3s;
+}
+
+.checkbox {
+    width: 32px;
+    height: 32px;
+    border-radius: 50px;
+    background: #FFF;
+    position: relative;
+    left: 0;
+    transition: .3s;
+}
+
+.progress-settings label input[type="checkbox"]:checked + .custom-checkbox {
+    background: #045dfe;
+}
+
+.progress-settings label input[type="checkbox"]:checked + .custom-checkbox > .checkbox {
+    left: calc(100% - 32px);
+}
+
+@media (max-width: 768px) {
+    .progress {
+        width: 320px;
+        height: 568px;
+    }
+    .progress-bar {
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    .progress-settings {
+        margin-top: 90px;
+    }
+}
